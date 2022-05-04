@@ -4,10 +4,13 @@ import logging
 import discord
 from google.cloud import secretmanager
 
-ROLE_MESSAGE_ID = 962449681575727104
+ROLE_MESSAGE_ID = 971407813580558368
 EMOJI_TO_ROLE = {
-    "bonk": 962695377402884096
+    "penguincheer": 971410906909114388,
+    "ravenhappy": 971377298269945886
 }
+
+POWER_USERS = ["Pronyo#1078"]
 
 logging.basicConfig(level=logging.INFO)
 
@@ -94,7 +97,24 @@ async def on_message(message):
     if message.author == discord_client.user:
         return
 
-    if message.content.startswith('$hello'):
+    if message.content.startswith("!help"):
         await message.channel.send('Hello!')
+    
+    if message.content.startswith("!roleinit") and str(message.author) in POWER_USERS:
+        penguin = discord.utils.get(discord_client.emojis, name="penguincheer")
+        raven = discord.utils.get(discord_client.emojis, name="ravenhappy")
+
+        embed = discord.Embed(
+            title="PaperBot Role Assignment",
+            description= f'\
+                Assign yourself a race role so you can get notified about races in your timezone! \n \n \
+                {penguin} for Racer (US)\n \
+                {raven} for Racer (EU)', 
+            color=discord.Colour.from_rgb(223, 178, 255)
+        )
+ 
+        messageEmbed = await message.channel.send(embed=embed)
+        await messageEmbed.add_reaction(penguin)
+        await messageEmbed.add_reaction(raven)
 
 discord_client.run(token)
