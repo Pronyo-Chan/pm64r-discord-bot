@@ -5,19 +5,40 @@ from constants import *
 async def init_role_message(message, discord_client):
     penguin = discord.utils.get(discord_client.emojis, name="penguincheer")
     raven = discord.utils.get(discord_client.emojis, name="ravenhappy")
+    quizmopog = discord.utils.get(discord_client.emojis, name="quizmopog")
 
     embed = discord.Embed(
             title="PaperBot Role Assignment",
             description= f'\
                 Assign yourself a race role so you can get notified about races in your timezone! \n \n \
-                {penguin} for Racer (US)\n \
-                {raven} for Racer (EU)', 
+                {penguin} for Racers (US)\n \
+                {raven} for Racers (EU)\n \
+                {quizmopog} for League Racers',
             color=discord.Colour.from_rgb(223, 178, 255)
         )
  
     messageEmbed = await message.channel.send(embed=embed)
     await messageEmbed.add_reaction(penguin)
     await messageEmbed.add_reaction(raven)
+
+async def update_role_message(message, discord_client):
+    penguin = discord.utils.get(discord_client.emojis, name="penguincheer")
+    raven = discord.utils.get(discord_client.emojis, name="ravenhappy")
+    quizmopog = discord.utils.get(discord_client.emojis, name="quizmopog")
+
+    embed = discord.Embed(
+            title="PaperBot Role Assignment",
+            description= f'\
+                Assign yourself a race role so you can get notified about races in your timezone! \n \n \
+                {penguin} for Racers (US)\n \
+                {raven} for Racers (EU)\n\
+                {quizmopog} for League Racers',
+            color=discord.Colour.from_rgb(223, 178, 255)
+        )
+ 
+    roleMsg = await message.channel.fetch_message(ROLE_MESSAGE_ID)
+    await roleMsg.edit(embed=embed)
+
 
 async def help_command(message):
     return await message.channel.send((

@@ -106,4 +106,7 @@ async def on_message(message):
     elif message.content.startswith("!roleinit") and str(message.author) in POWER_USERS:
         await init_role_message(message, discord_client)
 
+    elif message.content.startswith("!roleupdate") and str(message.author) in POWER_USERS:
+        await update_role_message(message, discord_client)
+
 discord_client.run(token)
