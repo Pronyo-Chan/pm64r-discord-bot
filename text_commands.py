@@ -11,7 +11,8 @@ async def init_role_message(message, discord_client):
     embed = discord.Embed(
             title="PaperBot Role Assignment",
             description= f'\
-                Assign yourself a race role so you can get notified about races in your timezone! \n \n \
+                Assign yourself a race role so you can get notified about races in your timezone,\n \
+                or the Lab Rat role to be notified about ongoing development experiments! \n \n \
                 {penguin} for Racers (US)\n \
                 {raven} for Racers (EU)\n \
                 {quizmopog} for League Racers\n \
@@ -32,7 +33,8 @@ async def update_role_message(message, discord_client):
     embed = discord.Embed(
             title="PaperBot Role Assignment",
             description= f'\
-                Assign yourself a race role so you can get notified about races in your timezone! \n \n \
+                Assign yourself a race role so you can get notified about races in your timezone,\n \
+                or the Lab Rat role to be notified about ongoing development experiments! \n \n \
                 {penguin} for Racers (US)\n \
                 {raven} for Racers (EU)\n\
                 {quizmopog} for League Racers\n \
