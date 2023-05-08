@@ -6,6 +6,7 @@ async def init_role_message(message, discord_client):
     penguin = discord.utils.get(discord_client.emojis, name="penguincheer")
     raven = discord.utils.get(discord_client.emojis, name="ravenhappy")
     quizmopog = discord.utils.get(discord_client.emojis, name="quizmopog")
+    rat = discord.utils.get(discord_client.emojis, name="rat")
 
     embed = discord.Embed(
             title="PaperBot Role Assignment",
@@ -13,7 +14,8 @@ async def init_role_message(message, discord_client):
                 Assign yourself a race role so you can get notified about races in your timezone! \n \n \
                 {penguin} for Racers (US)\n \
                 {raven} for Racers (EU)\n \
-                {quizmopog} for League Racers',
+                {quizmopog} for League Racers\n \
+                {rat} for Lab Rats',
             color=discord.Colour.from_rgb(223, 178, 255)
         )
  
@@ -25,6 +27,7 @@ async def update_role_message(message, discord_client):
     penguin = discord.utils.get(discord_client.emojis, name="penguincheer")
     raven = discord.utils.get(discord_client.emojis, name="ravenhappy")
     quizmopog = discord.utils.get(discord_client.emojis, name="quizmopog")
+    rat = discord.utils.get(discord_client.emojis, name="rat")
 
     embed = discord.Embed(
             title="PaperBot Role Assignment",
@@ -32,7 +35,8 @@ async def update_role_message(message, discord_client):
                 Assign yourself a race role so you can get notified about races in your timezone! \n \n \
                 {penguin} for Racers (US)\n \
                 {raven} for Racers (EU)\n\
-                {quizmopog} for League Racers',
+                {quizmopog} for League Racers\n \
+                {rat} for Lab Rats',
             color=discord.Colour.from_rgb(223, 178, 255)
         )
  
