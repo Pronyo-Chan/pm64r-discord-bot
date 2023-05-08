@@ -6,7 +6,7 @@ async def init_role_message(message, discord_client):
     penguin = discord.utils.get(discord_client.emojis, name="penguincheer")
     raven = discord.utils.get(discord_client.emojis, name="ravenhappy")
     quizmopog = discord.utils.get(discord_client.emojis, name="quizmopog")
-    rat = discord.utils.get(discord_client.emojis, name="rat")
+    rat = "🐀"
 
     embed = discord.Embed(
             title="PaperBot Role Assignment",
@@ -23,12 +23,14 @@ async def init_role_message(message, discord_client):
     messageEmbed = await message.channel.send(embed=embed)
     await messageEmbed.add_reaction(penguin)
     await messageEmbed.add_reaction(raven)
+    await messageEmbed.add_reaction(quizmopog)
+    await messageEmbed.add_reaction(rat)
 
 async def update_role_message(message, discord_client):
     penguin = discord.utils.get(discord_client.emojis, name="penguincheer")
     raven = discord.utils.get(discord_client.emojis, name="ravenhappy")
     quizmopog = discord.utils.get(discord_client.emojis, name="quizmopog")
-    rat = discord.utils.get(discord_client.emojis, name="rat")
+    rat = "🐀"
 
     embed = discord.Embed(
             title="PaperBot Role Assignment",
