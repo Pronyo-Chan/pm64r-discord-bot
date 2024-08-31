@@ -107,6 +107,7 @@ async def on_message(message):
         await init_role_message(message, discord_client)
 
     elif message.content.startswith("!roleupdate") and str(message.author.global_name) in POWER_USERS:
+        print("Role update triggered by" + message.author.global_name)
         await update_role_message(message, discord_client)
 
 discord_client.run(token)
