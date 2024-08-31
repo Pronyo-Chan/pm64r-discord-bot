@@ -6,6 +6,7 @@ async def init_role_message(message, discord_client):
     penguin = discord.utils.get(discord_client.emojis, name="penguincheer")
     raven = discord.utils.get(discord_client.emojis, name="ravenhappy")
     quizmopog = discord.utils.get(discord_client.emojis, name="quizmopog")
+    koot = discord.utils.get(discord_client.emojis, name="koot")
     rat = "🐀"
 
     embed = discord.Embed(
@@ -16,6 +17,7 @@ async def init_role_message(message, discord_client):
                 {penguin} for Racers (US)\n \
                 {raven} for Racers (EU)\n \
                 {quizmopog} for League Racers\n \
+                {koot} for Commentators\n \
                 {rat} for Lab Rats',
             color=discord.Colour.from_rgb(223, 178, 255)
         )
@@ -24,12 +26,14 @@ async def init_role_message(message, discord_client):
     await messageEmbed.add_reaction(penguin)
     await messageEmbed.add_reaction(raven)
     await messageEmbed.add_reaction(quizmopog)
+    await messageEmbed.add_reaction(koot)
     await messageEmbed.add_reaction(rat)
 
 async def update_role_message(message, discord_client):
     penguin = discord.utils.get(discord_client.emojis, name="penguincheer")
     raven = discord.utils.get(discord_client.emojis, name="ravenhappy")
     quizmopog = discord.utils.get(discord_client.emojis, name="quizmopog")
+    koot = discord.utils.get(discord_client.emojis, name="koot")
     rat = "🐀"
 
     embed = discord.Embed(
@@ -40,6 +44,7 @@ async def update_role_message(message, discord_client):
                 {penguin} for Racers (US)\n \
                 {raven} for Racers (EU)\n\
                 {quizmopog} for League Racers\n \
+                {koot} for Commentators\n \
                 {rat} for Lab Rats',
             color=discord.Colour.from_rgb(223, 178, 255)
         )
