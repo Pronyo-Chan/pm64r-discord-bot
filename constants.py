@@ -12,4 +12,4 @@ EMOJI_TO_ROLE = {
     "🐀": 1105095286315044957
 }
 
-POWER_USERS = ["Pronyo#1078"]
+POWER_USERS = ["pronyo"]
