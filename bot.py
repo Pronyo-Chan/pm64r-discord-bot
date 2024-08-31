@@ -14,6 +14,7 @@ token = secret_manager.access_secret_version(request={"name": "projects/42647162
 
 intents = discord.Intents.default()
 intents.members = True
+intents.message_content = True
 
 discord_client = discord.Client(intents=intents)
 
@@ -84,8 +85,9 @@ async def on_raw_reaction_remove(payload: discord.RawReactionActionEvent):
 Handle custom commands.
 '''
 @discord_client.event
-async def on_message(message):
-    print(message)
+async def on_message(message):    
+    print("message received")
+    print(message.content)
     if message.author == discord_client.user:
         return
 
@@ -104,11 +106,11 @@ async def on_message(message):
     elif message.content.startswith("!rom"):
         await rom_command(message)
     
-    elif message.content.startswith("!roleinit") and str(message.author.global_name) in POWER_USERS:
+    elif message.content.startswith("!roleinit") and str(message.author.name) in POWER_USERS:
         await init_role_message(message, discord_client)
 
-    elif message.content.startswith("!roleupdate") and str(message.author.global_name) in POWER_USERS:
-        print("Role update triggered by" + message.author.global_name)
+    elif message.content.startswith("!roleupdate") and str(message.author.name) in POWER_USERS:
+        print("Role update triggered by" + message.author.name)
         await update_role_message(message, discord_client)
 
 discord_client.run(token)
