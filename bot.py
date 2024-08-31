@@ -85,6 +85,7 @@ Handle custom commands.
 '''
 @discord_client.event
 async def on_message(message):
+    print(message)
     if message.author == discord_client.user:
         return
 
