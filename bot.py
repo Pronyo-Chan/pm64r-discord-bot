@@ -100,8 +100,8 @@ async def on_message(message):
     elif message.content.startswith("!logic"):
         await logic_command(message)
 
-    elif message.content.startswith("!settings"):
-        await settings_command(message)
+    elif message.content.startswith("!wiki"):
+        await wiki_command(message)
 
     elif message.content.startswith("!rom"):
         await rom_command(message)

@@ -62,12 +62,12 @@ async def help_command(message):
 
 async def logic_command(message):
     return await message.channel.send((
-        "Please visit the **Useful Tips** page at <https://pm64randomizer.com/tips> to view details about the randomizer's logic and other useful tips."
+        "Please visit the **Logic Guide** at <https://github.com/icebound777/PMR-SeedGenerator/wiki/Logic-Guide> to view details about the randomizer's logic and other useful tips."
     ))
 
-async def settings_command(message):
+async def wiki_command(message):
     return await message.channel.send((
-        "Please visit the **Setting Details** page at <https://pm64randomizer.com/settings> to view details about the randomizer's different settings."
+        "Please visit the **Wiki** <https://github.com/icebound777/PMR-SeedGenerator/wiki> to view various information regarding the randomizer."
     ))
 
 async def rom_command(message):
@@ -81,6 +81,6 @@ async def get_commands(message):
         "The following text commands can be used to obtain information:\n\n"
         "**!help** for help about Paper Bot or the randomizer in general.\n"
         "**!logic** for details about the randomizer's logic\n"
-        "**!settings** for details about the randomizer's settings\n"
+        "**!wikiw** for a link to the official wiki\n"
         "**!rom** for info about the rom required to play the Paper Mario 64 Randomizer"
     ))
