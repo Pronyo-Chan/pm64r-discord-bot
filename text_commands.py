@@ -81,6 +81,6 @@ async def get_commands(message):
         "The following text commands can be used to obtain information:\n\n"
         "**!help** for help about Paper Bot or the randomizer in general.\n"
         "**!logic** for details about the randomizer's logic\n"
-        "**!wikiw** for a link to the official wiki\n"
+        "**!wiki** for a link to the official wiki\n"
         "**!rom** for info about the rom required to play the Paper Mario 64 Randomizer"
     ))
